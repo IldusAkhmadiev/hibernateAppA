@@ -6,3 +6,8 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
+/dataSources/fca94840-1735-4973-b270-586b1b02f874.xml
+/dataSources/fca94840-1735-4973-b270-586b1b02f874/storage_v2/_src_/database/hibernate_demo_db.bVH-1A.meta
+/dataSources/fca94840-1735-4973-b270-586b1b02f874/storage_v2/_src_/database/hibernate_demo_db.bVH-1A/schema/information_schema.FNRwLQ.meta
+/dataSources/fca94840-1735-4973-b270-586b1b02f874/storage_v2/_src_/database/hibernate_demo_db.bVH-1A/schema/pg_catalog.0S1ZNQ.meta
+/dataSources/fca94840-1735-4973-b270-586b1b02f874/storage_v2/_src_/database/hibernate_demo_db.bVH-1A/schema/public.abK9xQ.meta
