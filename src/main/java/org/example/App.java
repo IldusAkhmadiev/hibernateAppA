@@ -4,6 +4,9 @@ import org.example.model.Person;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.hibernate.query.Query;
+
+import java.util.List;
 
 /**
  * Hello world!
@@ -22,8 +25,9 @@ public class App  {
     public static void main( String[] args )
     {
 
-        System.out.println(savePerson());
+//        System.out.println(savePerson());
 //        System.out.println(updatePerson());
+        System.out.println(firstHQL());
     }
 
     public static Person savePerson()  {
@@ -59,6 +63,26 @@ public class App  {
             session.beginTransaction();
             person = session.get(Person.class, 2);
             session.delete(person);
+            session.getTransaction().commit();
+        } finally {
+            sessionFactory.close();
+        }
+        return person;
+    }
+
+    public static Person firstHQL() {
+        Person person = null;
+        try {
+            Session session = sessionFactory.getCurrentSession();
+            session.beginTransaction();
+
+            session.createQuery("update Person set name='Test' where  age > 30 ").executeUpdate();
+//            List<Person> person_ = session.createQuery("FROM Person where age > 30 ").getResultList(); // age поле класса
+//            ("FROM Person where LIKE > 'T%' ") // все у кого имя начинается на T
+//            for (Person person1 : person_) {
+//                System.out.println(person1);
+//            }
+
             session.getTransaction().commit();
         } finally {
             sessionFactory.close();
